@@ -6,7 +6,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class coinDetailDto(
+data class CoinDetailDto(
     @SerialName("description")
     val description: String,
     @SerialName("development_status")
@@ -57,7 +57,7 @@ data class coinDetailDto(
     val whitepaper: Whitepaper
 )
 
-fun coinDetailDto.toCoinDetail(): CoinDetails {
+fun CoinDetailDto.toCoinDetail(): CoinDetails {
     return CoinDetails(
         coinId = id,
         name = name,
