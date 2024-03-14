@@ -7,3 +7,5 @@ sealed class Resource<T>(val data: T? = null, val message: String? = null) {
 }
 
 "test commit"
+
+        "test commit 2"
