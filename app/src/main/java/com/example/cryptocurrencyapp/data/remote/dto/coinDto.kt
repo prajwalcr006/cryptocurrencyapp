@@ -1,5 +1,6 @@
 package com.example.cryptocurrencyapp.data.remote.dto
 
+import com.example.cryptocurrencyapp.domain.model.Coin
 import kotlinx.serialization.*
 import kotlinx.serialization.json.*
 import kotlinx.serialization.descriptors.*
@@ -20,3 +21,13 @@ data class CoinDto (
 
     val type: String
 )
+
+fun CoinDto.toCoin(): Coin {
+    return Coin(
+        id=this.id,
+        name=this.name,
+        symbol=this.symbol,
+        rank=this.rank,
+        isActive=this.isActive
+    )
+}
