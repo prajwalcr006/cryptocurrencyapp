@@ -72,6 +72,12 @@ dependencies {
     implementation("com.google.dagger:dagger:2.44")
     annotationProcessor ("com.google.dagger:dagger-compiler:2.51")
 
+    //Koin
+    implementation("io.insert-koin:koin-android:3.2.0")
+
+    //gson converter factory
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
 
 
     testImplementation("junit:junit:4.13.2")

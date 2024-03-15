@@ -14,6 +14,7 @@ import javax.inject.Inject
 
 class GetCoinUseCase @Inject constructor(private val coinRepository: CoinRepository) {
 
+    //this is logic to get detail of one coin
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
     operator fun invoke(coinId: String): Flow<Resource<List<CoinDetails>>> = flow {
         try {
