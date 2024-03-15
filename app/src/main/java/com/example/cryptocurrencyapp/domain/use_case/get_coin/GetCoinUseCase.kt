@@ -16,10 +16,11 @@ class GetCoinUseCase @Inject constructor(private val coinRepository: CoinReposit
 
     //this is logic to get detail of one coin
     @RequiresExtension(extension = Build.VERSION_CODES.S, version = 7)
-    operator fun invoke(coinId: String): Flow<Resource<List<CoinDetails>>> = flow {
+    operator fun invoke(coinId: String): Flow<Resource<CoinDetails>> = flow {
         try {
             emit(Resource.Loading())
-            val data = coinRepository.getCoinById(coinId).map { it.toCoinDetail() }
+            val data = coinRepository.getCoinById(coinId).toCoinDetail()
+            emit(Resource.Success(data))
         } catch (e: HttpException) {
             emit(Resource.Error(e.localizedMessage?:"unexpected error!!!"))
         } catch (e: IOException) {

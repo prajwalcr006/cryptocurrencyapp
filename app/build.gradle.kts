@@ -78,6 +78,8 @@ dependencies {
     //gson converter factory
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
+    //viewModel
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
 
 
     testImplementation("junit:junit:4.13.2")
