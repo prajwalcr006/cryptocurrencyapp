@@ -1,6 +1,7 @@
 package com.example.cryptocurrencyapp.presentation.coin_list
 
 import android.os.Build
+import android.util.Log
 import androidx.annotation.RequiresExtension
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -31,6 +32,7 @@ class CoinListViewModel @Inject constructor(private val getCoinsUseCase: GetCoin
             when(result) {
                 is Resource.Success -> {
                     _state.value = CoinListState(coins = result.data?: emptyList())
+                   // Log.d("check","")
                 }
                 is Resource.Loading -> {
                     _state.value = CoinListState(loading = true)
